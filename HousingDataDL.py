@@ -24,10 +24,14 @@ def load_housing_data(housing_path=HOUSING_PATH):
     return pd.read_csv(csv_path)
 
 
-fetch_housing_data()
 
-df = load_housing_data()
-print(df.info())
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()
+    fetch_housing_data()
 
-df.hist(bins=50, figsize=(20,15))
-plt.show()
+    df = load_housing_data()
+    print(df.info())
+
+    df.hist(bins=50, figsize=(20,15))
+    plt.show()
